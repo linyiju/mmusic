@@ -7,26 +7,13 @@
             <h1><a href="/">MMusic</a></h1>
         </div>
 
-        <div>
-            <p>published: 2020/03/16, 20:50</p>
-            <h2><a href="">My first post</a></h2>
-            <p>The 1975 Introduce
-                <ul>
-                    <li><a href="https://www.youtube.com/watch?v=CHk5SWVO4p8">Chocolate</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=Iyy3YOpxL2k">Robber</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=FSnAllHtG70">The Sound</a></li>
-                </ul>
-            </p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published : {{post.created_at}}</p>
+                <h2><a href="">{{post.title}}</a></h2>
+                <p>{{post.text | linebreaksbr}}</p>
+            </div>
+        {%endfor%}
 
-        <div>
-            <p>published: 2020/03/18, 11:56</p>
-            <h2><a href="">Cardi b - Coronavirus</a></h2>
-            <p>The hottest word in 2020 is CORONAVIRUS!
-                <br>
-                Let's enjoy this song. <a href="https://www.youtube.com/watch?v=INaaafxb6EI&feature=emb_title">Link!</a>
-            </p>
-
-        </div>
     </body>
 </html>
