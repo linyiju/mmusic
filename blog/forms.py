@@ -1,0 +1,12 @@
+from blog.models import Post
+from django import forms
+
+
+class PostForm(forms.ModelForm):
+    """
+    Manage blog editing
+    """
+
+    class Meta:
+        model = Post
+        fields = ('title', 'content')
