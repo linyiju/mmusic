@@ -4,6 +4,10 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Post(models.Model):
+    """
+    Manage blog post
+    """
+
     author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('作者'), on_delete=models.PROTECT, default='')
     title = models.CharField(_('標題'), max_length=225)
     content = models.TextField(verbose_name=_('內文'), null=True, blank=True)
