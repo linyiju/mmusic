@@ -4,7 +4,7 @@
     {% for post in posts %}
         <div class="post">
             <p class="date">created : {{post.created_at| date:'Y-m-d H:i' }}</p>
-            <h1><a href="{% url 'post_detai' pk=post.pk%}">{{ post.titles}}</a></h1>
+            <h1><a href="{% url 'post_detail' pk=post.pk%}">{{ post.titles}}</a></h1>
             <p>{{ post.content | truncatechars:200  }}}</p>
         </div>
     {% endfor %}
