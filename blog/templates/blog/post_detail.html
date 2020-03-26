@@ -2,11 +2,14 @@
 
 {% block content%}
 	<div class="post">
-		{% if post.created_at %}
+		{% if post.published_at %}
 			<div class="date">
-				<p>{{ post.created_at | date:'Y-m-d H:i' }}</p>
+				<p>{{ post.published_at | date:'Y-m-d H:i' }}</p>
 			</div>
+		{% else %}
+			<a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
 		{% endif%}
+
 		{% if user.is_authenticated %}
      		<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
 		{% endif %}
