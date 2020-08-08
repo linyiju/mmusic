@@ -2,6 +2,8 @@
 *.swp
 *.sqlite*
 *.mysql*
+db.sqlite3
+__pycache__
 
 # Virtualenvgit
 venv/
