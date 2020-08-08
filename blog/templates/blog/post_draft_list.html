@@ -6,6 +6,7 @@
             <p class="date">created : {{post.created_at| date:'Y-m-d H:i' }}</p>
             <h1><a href="{% url 'post_detail' pk=post.pk%}">{{ post.titles}}</a></h1>
             <p>{{ post.content | truncatechars:200  }}}</p>
+            <a href="{% url 'post_detail' pk=post.pk%}">Comments: {{ post.comments.count}}</a>
         </div>
     {% endfor %}
 {% endblock%}
